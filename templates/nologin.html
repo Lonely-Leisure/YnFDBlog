@@ -1,0 +1,72 @@
+<!--{% load static %}-->
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>未登录</title>
+
+    <!--样式表-->
+    <!--主页顶栏-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/top_bar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bg_welcome.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bottom_bar.css' %}">
+
+
+</head>
+
+<body>
+
+<!--背景-->
+<div class="bg">
+</div>
+
+<!--导航条-->
+<div class="top_bar">
+    <ul>
+
+        <!--导航条网站图标-->
+        <li><a class="site_img_bar" href="#">
+            <img src="{% static 'img/YNFDB_little.svg' %}"
+                 alt="Do not support SVG"
+                 width="40px" height="40px">
+
+        </a></li>
+
+        <!--导航条空白栏-->
+        <li >
+            <div class="black_bar">
+
+            </div>
+        </li>
+
+        <!--导航条 登陆-注册-->
+        <li class="login_register">
+            <button class="login_register_button" type="submit">登陆/注册</button>
+        </li>
+    </ul>
+</div>
+
+
+<!--欢迎-->
+<div class="welcome">
+    <p class="welcome_to_language">
+        欢迎使用 YnFDBlog 博客系统 <br>
+        Welcome to use YnFDBlog blog system
+    </p>
+</div>
+
+<div class="bottom_bar">
+    <ul>
+        <li class="bottom_bar_1">
+
+        </li>
+        <li class="bottom_bar_2">
+
+        </li>
+        <li class="bottom_bar_3">
+
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
