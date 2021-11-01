@@ -14,7 +14,7 @@
 - 支持 Markdown 语法 (未实现)
 - 待定
 
-> 当前项目正处于 alpha 
+> 当前项目正处于 [alpha](https://github.com/Lonely-Leisure/YnFDBlog/tree/alpha) 
 
 > 如果你发现 bugs, 欢迎 issue
 
