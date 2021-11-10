@@ -1,0 +1,47 @@
+.post {
+    width:  50%;
+    height: 100%;
+    margin: 0 auto;
+    z-index: -1;
+}
+
+.post article {
+    background: white;
+    padding: 1px 15px 20px 20px;
+    margin-bottom: 20px;
+    position: relative;
+    top: 50px;
+    border-bottom: black 1px solid;
+}
+
+.post_title a {
+    color: black;
+    text-decoration: none;
+}
+
+.post_list_end {
+    width: 50%;
+    height: 200px;
+    margin: 0 auto;
+}
+
+    .post_info a {
+        color: #58666e;
+        text-decoration: none;
+        font-size: 10px;
+        font-weight: bold;
+    }
+    .post_info svg {
+        color: #58666e;
+    }
+    .post_summary p {
+        font-size: 10px;
+        font-weight: bold;
+    }
+    .continue_read a {
+        font-family: serif;
+        color: #58666e;
+        text-decoration: none;
+        font-size: 5px;
+        font-weight: bold;
+    }

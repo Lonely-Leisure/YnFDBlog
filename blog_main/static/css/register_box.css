@@ -1,0 +1,53 @@
+/*注册窗口*/
+.register_area {
+    width: 30%;
+    margin: 0 auto;
+    background: rgba(128, 128, 128, 0.3);
+    /*padding: 5px;*/
+    position: relative;
+    top: 125px;
+    left: auto;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 3px 3px 3px;
+}
+
+/*标题*/
+.register_title {
+    color: aliceblue;
+    position: relative;
+    top: 10px;
+    bottom: 5px;
+}
+
+/*输入框*/
+.register_area input {
+    width: 80%;
+    height: 20px;
+    margin: 0 0 5px 0;
+    outline-style: none;
+    border: 3px solid transparent;
+}
+
+/*文件上传*/
+.file_upload {
+    margin: 0 0 0 -8px;
+}
+
+/*按钮*/
+.register_box button {
+    width: 40%;
+    height: 30px;
+    margin: 10px 3px 20px 3px;
+    text-align: center;
+    border: none;
+}
+
+/*提示信息*/
+.register_box p {
+    font-weight:bold;
+    padding-right: 35px;
+    font-size: 5px;
+    color: #960000;
+    float: right;
+}

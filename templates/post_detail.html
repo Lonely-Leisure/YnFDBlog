@@ -1,0 +1,160 @@
+{% load static %}
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+
+    <!--专用样式表-->
+    <!--主页顶栏-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/post_detail/top_bar.css' %}">
+    <!--背景-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/post_detail/bg.css' %}">
+    <!--文章-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/post_detail/post.css' %}">
+    <!--代码高亮-->
+
+
+    <!--通用样式表-->
+    <!--主页底栏-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bottom_bar.css' %}">
+    <!--滚动栏-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/rollbar.css' %}">
+
+
+    <!--JS脚本-->
+    <!--代码高亮-->
+
+
+</head>
+
+<body>
+
+<!--背景-->
+<div class="bg">
+</div>
+
+<!--导航条-->
+<div class="top_bar">
+        <ul class="menu">
+            <li><a href="{% url 'blog_main:index' %}">
+                    <img src="{% static 'img/YNFDB_little.svg' %}"
+                        alt="Do not support SVG"
+                        width="40px" height="40px">
+                </a>
+                <ul class="submenu">
+                    <li><a href="#">{{ nologin }}</a></li>
+                    <li><a href="#">{{ login }}</a></li>
+                    <li><a href="#">{{ register }}</a></li>
+                </ul></li>
+            <li><a href="#">归档</a></li>
+            <li><a href="#">分类</a>
+                <ul class="submenu">
+                    <li><a href="#">one</a></li>
+                    <li><a href="#">two</a></li>
+                    <li><a href="#">three</a></li>
+                    <li><a href="#">four</a></li>
+                    <li><a href="#">five</a></li>
+                    <li><a href="#">six</a></li>
+                </ul>
+            </li>
+            <li><a href="#">页面</a>
+                <ul class="submenu">
+                    <li><a href="#">one</a></li>
+                    <li><a href="#">two</a></li>
+                    <li><a href="#">three</a></li>
+                    <li><a href="#">four</a></li>
+                    <li><a href="#">five</a></li>
+                    <li><a href="#">six</a></li>
+                </ul>
+            </li>
+            <li><a href="#">其他</a></li>
+        </ul>
+</div>
+
+<!--文章目录-->
+{% block toc %}
+    {% if post.toc %}
+        <div class="widget widget-content">
+            <h3 class="widget-title">文章目录</h3>
+            <div class="toc">
+                <ul>
+                    {{ post.toc|safe }}
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+{% endblock toc %}
+
+<!--文章-->
+<div class="post_area">
+    <!--标题-->
+    <h1 class="post_title">
+        <a href="#">{{ post.title }}</a>
+    </h1>
+
+    <!--信息-->
+    <div class="post_info">
+
+        <!--文章作者-->
+
+        <a class="post_author" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11px" height="11px" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 class="feather feather-user">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            {{ post.author }}
+        </a>
+
+        <!--文章创建时间-->
+        <a class="post_cdate" href="#">
+            <time
+                    datetime="{{ post.created_time }}">{{ post.created_time }}
+            </time>
+        </a>
+
+        <!--文章浏览量-->
+        <a class="views_num" href="#">777次浏览</a>
+
+        <!--文章评论-->
+        <a class="post_comments_num" href="#">4评论</a>
+
+    </div>
+
+    <!--文章内容-->
+    <div class="post_body">
+
+        <!--safe 不进行转义-->
+        <p>{{ post.body | safe }}</p>
+
+    </div>
+
+    <div class="post_list_end">
+        <p>这是底部</p>
+    </div>
+</div>
+
+<!--底栏-->
+<div class="bottom_bar">
+    <div class="bottom_bar_inner">
+        <span class="bottom_bar_text">
+            <a href="#" target="_blank">
+                帮助
+            </a>
+            <a href="#" target="_blank">
+                举报
+            </a>
+            <a href="#" target="_blank">
+                反馈
+            </a>
+            <a href="#" target="_blank">
+                分享
+            </a>
+            <a>Copyright &copy; 2021, YnFDBlog</a>
+        </span>
+    </div>
+</div>
+
+</body>
+</html>

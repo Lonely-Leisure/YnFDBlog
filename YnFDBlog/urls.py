@@ -1,4 +1,4 @@
-"""Web_YnFDBlog URL Configuration
+"""YnFDBlog URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -16,10 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from blog_main import views
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog_main/', include('blog_main.urls')),
-    path('', views.nologin, name='未登录')
+    path('', include('blog_main.urls')),
 ]
