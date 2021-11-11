@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://github.com/Lonely-Leisure/YnFDBlog/blob/alpha/blog_main/static/img/YNFDB.svg" alt="YnFDBlog" width="200">
   <p>
-    使用 Python Web + django 框架搭建的博客项目
+    使用 django 框架搭建的博客项目
   <p>
 </div>
 
