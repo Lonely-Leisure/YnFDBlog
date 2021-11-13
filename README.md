@@ -11,11 +11,13 @@
 - **前端技术:** html + css + js
 - **后台技术:** python + django + sqlite
 
+### 项目特点:
+- 文章支持 Markdown 语法
+
 ### TODO:
-- 自定义主题 (未实现)
-- 第三方插件 (未实现)
-- 支持 Markdown 语法 (√)
-- 使用 Markdown 编辑器 (未实现)
+- 自定义主题 
+- 第三方插件 
+- 使用 Markdown 编辑器
 - 待定
 
 > 当前项目正处于 [alpha](https://github.com/Lonely-Leisure/YnFDBlog/tree/alpha) 
