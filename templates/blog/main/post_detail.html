@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<!--页面标题-->
+{% block title %}
+    {{ post.title }}
+{% endblock %}
+
+<!--专用样式表-->
+{% block custom_css %}
+
+    <!--代码高亮-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/post_detail/high_light.css' %}">
+
+    <!--文章-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/post_detail/post.css' %}">
+
+{% endblock %}
+
+<!--专用JS_top-->
+{% block js_custom_top %}
+    <script>
+        function open_post_title(){
+            text = document.getElementsByClassName("post_title_text")
+            text.innerHTML = "{{ post.title }}"
+        }
+        function close_post_title(){
+            text = document.getElementsByClassName("post_title_text")
+            text.innerHTML = "{{ post.title | truncatechars:30 }} ..."
+        }
+    </script>
+{% endblock %}
+
+<!--文章标题与信息-->
+{% block post_title %}
+    <ul>
+        <!--标题-->
+        <h1 class="post_title">
+            <a class="post_title_text" onmouseover="open_post_title()" onmouseout="close_post_title()" >
+                {{ post.title | truncatechars:30 }} ...
+            </a>
+        </h1>
+        <!--信息-->
+        <div class="post_info">
+
+            <!--文章作者-->
+            <a class="post_author" href="#">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13px" height="13px" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="feather feather-user">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </span>
+                <span>
+                 {{ post.author }}
+                </span>
+            </a>
+
+            <!--文章创建时间-->
+            <a class="post_cdate" href="#">
+                <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13px" height="13px" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="feather feather-clock">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                </span>
+                <time
+                        datetime="{{ post.created_time }}">{{ post.created_time }}
+                </time>
+            </a>
+
+            <!--文章浏览量-->
+            <a class="views_num" href="#">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13px" height="13px" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle
+                            cx="12" cy="12" r="3"></circle></svg>
+                </span>
+                <span>
+                    777次浏览
+                </span>
+            </a>
+
+            <!--文章评论-->
+            <a class="post_comments_num" href="#">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13px" height="13px" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="feather feather-message-circle"><path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                        </path>
+                    </svg>
+                </span>
+                <span>
+                    4评论
+                </span>
+            </a>
+
+        </div>
+    </ul>
+{% endblock %}
+<!--文章详情-->
+{% block post %}
+    <div class="post_area">
+
+        <!--文章内容-->
+        <div class="post_body">
+
+            <!--safe 不进行转义-->
+            <p>{{ post.body | safe }}</p>
+
+        </div>
+
+        <div class="post_list_end">
+            <p>这是底部</p>
+        </div>
+    </div>
+{% endblock %}
+
+<!--文章目录-->
+{% block toc %}
+
+    {% if post.toc %}
+        <div class="widget widget-content">
+            <h3 class="widget-title">文章目录</h3>
+            <div class="toc">
+                <ul>
+                    {{ post.toc|safe }}
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock toc %}
+
+<!--评论-->
+
+
+<!--专用JS_bottom-->
+{% block js_custom_bottom %}
+
+    <!--代码高亮-->
+    <link href="https://cdn.bootcss.com/highlight.js/9.15.8/styles/github.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
+    <script src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+        hljs.initLineNumbersOnLoad();
+    </script>
+
+{% endblock %}

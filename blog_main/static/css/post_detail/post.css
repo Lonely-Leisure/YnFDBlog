@@ -1,30 +1,13 @@
 /*文章区域*/
 .post_area {
-    width:  50%;
+    width:  70%;
     background: white;
     padding: 1px 15px 20px 20px;
     margin: 0 auto;
-    position: relative;
-    top: 100px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px 3px;
-    border-radius: 10px;
+    position: absolute;
+    top: 400px;
+    left: 30px;
 }
-
-/*文章目录*/
-.widget-title {
-    position: fixed;
-    top: 10px;
-    right: 11%;
-}
-    .toc {
-        position: fixed;
-        top: 70px;
-        right: 10%;
-        text-align: left;
-    }
-    .toc a {
-        color: black;
-    }
 
 /*文章正文*/
 .post_body {
@@ -32,26 +15,41 @@
     background: #f1f3f4;
     margin: 30px auto 0;
     padding: 0 0 0 1.5%;
-    border-radius: 10px;
-    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3);
 }
 
 /*文章末尾*/
 .post_list_end {
-    width: 50%;
-    height: 50px;
+    width: 70%;
+    height: 100px;
     margin: 50px auto 0;
+}
+/*标题*/
+.post_title {
+    width: 60%;
+    position: absolute;
+    left: 70px;
+    top: 150px;
+
 }
 
 /*标题链接*/
 .post_title a {
-    color: black;
+    color: #ffffff;
     text-decoration: none;
+}
+
+/*文章信息*/
+.post_info {
+    text-decoration: none;
+    position: relative;
+    top: 170px;
+    left: -70px;
+    width: 50%;
 }
 
     /*文章信息链接*/
     .post_info a {
-        color: #58666e;
+        color: #9f9f9f;
         padding-right: 5px;
         padding-left: 5px;
         text-decoration: none;
@@ -61,7 +59,7 @@
     /*文章信息图标*/
     .post_info svg {
         margin-top: 1px;
-        color: #58666e;
+        color: #9f9f9f;
     }
     /*文章正文*/
     .post_body p {

@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog_main.apps.BlogMainConfig'
+    'blog_main',
 ]
 
 MIDDLEWARE = [
@@ -65,6 +65,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            # 'libraries': {
+            #     'comment_extras': 'blog_comments.templatetags.comments_extras'
+            # }
         },
     },
 ]

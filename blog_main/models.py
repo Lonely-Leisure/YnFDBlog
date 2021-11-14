@@ -72,6 +72,7 @@ class Post(models.Model):
     # 文章作者
     author = models.ForeignKey(User, verbose_name='文章作者', on_delete=models.CASCADE)
 
+    # 自行生成文章摘要
     def save(self, *args, **kwargs):
         self.modified_time = timezone.now()
         super().save(*args, **kwargs)

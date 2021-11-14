@@ -1,0 +1,41 @@
+.side_bar {
+    width: 20%;
+    position:absolute;
+    top: 410px;
+    right: 30px;
+    background: white;
+    border-radius: 10px;
+    padding: 0 1%;
+    z-index: 0;
+}
+.side_bar a {
+    font-size: 10px;
+    text-decoration: none;
+    color: black;
+}
+    .side_bar a:hover{
+        color: #3c65ff;
+    }
+
+.side_bar div {
+    margin-top: 0;
+}
+
+.widget-tag-cloud li {
+    display: inline-block;
+    min-width: 10px;
+    padding: 4px 8px;
+    line-height: 1;
+    color: #fff;
+    background-color: #000;
+    border-radius: 10px;
+}
+
+.widget-tag-cloud a {
+    font-weight: bold;
+    color: white;
+}
+    .widget-tag-cloud li:hover {
+        background: white;
+        color: #3c65ff;
+    }
